@@ -13,7 +13,11 @@
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--bg); color: var(--ink);
     font-family: -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif; }
-  main { max-width: 960px; margin: 0 auto; padding: 24px 16px 48px; }
+  /* 배경: 심벌마크를 화면 가운데에 은은하게 고정 */
+  body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    background: url("emblem.png") center / min(80vw, 620px) no-repeat; opacity: .13; }
+  section, #result { background-color: rgba(255, 255, 255, .82); backdrop-filter: blur(2px); }
+  main { max-width: 960px; margin: 0 auto; padding: 24px 16px 48px; position: relative; }
   header h1 { margin: 0 0 4px; font-size: 26px; }
   header p { margin: 0 0 16px; color: var(--muted); font-size: 14px; }
   #status { font-size: 14px; color: var(--muted); margin-bottom: 12px; }
